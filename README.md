@@ -88,7 +88,7 @@ graph TD
 
 ---
 
-## 🌐 Browser Compatibility
+## 🌐 Teseting (Browser Compatibility)
 
 | Browser | Screen Sharing | Mic Mixing | ZIP Compilation | Keybindings |
 | :--- | :--- | :--- | :--- | :--- |
