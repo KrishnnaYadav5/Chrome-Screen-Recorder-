@@ -1,3 +1,8 @@
+# Hosted link
+Click Here 👉 https://chrome-screen-recorder-gamma.vercel.app/
+
+---
+
 # ScreenRecorder
 
 A clean, responsive, and completely client-side screen and audio recorder. This application runs entirely in your web browser with **zero external libraries or CDNs**, meaning your data never leaves your computer, ensuring maximum speed and complete privacy.
