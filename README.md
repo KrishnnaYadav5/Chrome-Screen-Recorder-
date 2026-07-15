@@ -29,7 +29,7 @@ ScreenRecorder is a single-page utility tool that helps users record their scree
 * **Inline Renaming**: Click a recording's title to swap it with a square-corner input field. The text cursor automatically selects the name while leaving out the `.webm` extension for fast typing.
 * **Drag-and-Drop Reordering**: Drag recording cards using their grab handle (`≡`) to change their list sequence.
 * **Delete Confirmation Modal**: Protects you from deleting recordings by accident with a custom popup window. Deleting a video frees up browser memory automatically.
-* **Zero-Library ZIP Downloads**: Package and download all session clips inside a single `.zip` file compiled from scratch using binary JavaScript.
+* **ZIP Downloads**: Package and download all recorded video inside a single `.zip` file compiled from scratch using binary JavaScript.
 
 ---
 
