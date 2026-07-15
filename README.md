@@ -80,9 +80,11 @@ graph TD
 
 ---
 
-## 📸 Screenshots
+## 📸 Implementaion Screenshots
 
-![ScreenRecorder UI Mockup](./screenshot.jpg)
+## Step: 1 Select the quality of the video you want to record
+
+
 
 ---
 
