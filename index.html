@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ScreenRecorder - Premium Screen & Audio Recorder</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Ambient background light effects -->
+  <div class="bg-glow bg-glow-1"></div>
+  <div class="bg-glow bg-glow-2"></div>
+
+  <div class="app-container">
+    <!-- Header -->
+    <header class="app-header">
+      <div class="brand">
+        <h1>Screen<span>Recorder</span></h1>
+      </div>
+    </header>
+
+    <main class="app-grid">
+      <!-- Left Column: Controls & Settings -->
+      <section class="settings-card glass-panel">
+        <div class="card-header">
+          <h2>Capture Settings</h2>
+          <p>Configure your recording sources and quality</p>
+        </div>
+
+        <div class="setting-group">
+          <label class="setting-label">Video Quality</label>
+          <div class="select-wrapper">
+            <select id="qualitySelect">
+              <option value="1080p60">1080p (Full HD) • 60 FPS</option>
+              <option value="1080p30" selected>1080p (Full HD) • 30 FPS</option>
+              <option value="720p30">720p (HD) • 30 FPS</option>
+              <option value="480p30">480p (SD) • 30 FPS</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="setting-group">
+          <label class="setting-label">Audio Input Sources</label>
+          
+          <div class="toggle-control">
+            <div class="toggle-info">
+              <span class="toggle-title">Record Microphone</span>
+              <span class="toggle-desc">Capture your voice / external audio</span>
+            </div>
+            <label class="switch">
+              <input type="checkbox" id="micToggle" checked>
+              <span class="slider round"></span>
+            </label>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Center Column: Preview & Action Controls -->
+      <section class="preview-card glass-panel">
+        <div class="preview-viewport" id="previewViewport">
+          <!-- Live Preview Screen -->
+          <video id="previewVideo" autoplay playsinline muted class="hidden"></video>
+          
+          <!-- Post-Recording Player -->
+          <video id="playbackVideo" controls class="hidden"></video>
+
+          <!-- Idle Placeholder -->
+          <div class="viewport-placeholder" id="viewportPlaceholder">
+            <div class="placeholder-icon">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M15 10L19.5528 7.72361C20.4722 7.26389 21.5 7.93282 21.5 8.9618V15.0382C21.5 16.0672 20.4722 16.7361 19.5528 16.2764L15 14M4 6H13C14.1046 6 15 6.89543 15 8V16C15 17.1046 14.1046 18 13 18H4C2.89543 18 2 17.1046 2 16V8C2 6.89543 2.89543 6 4 6Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3>Aether Preview Screen</h3>
+            <p>Start recording to display your screen live capture feed here</p>
+          </div>
+
+          <!-- Active Recording Overlay -->
+          <div class="recording-overlay hidden" id="recordingOverlay">
+            <div class="rec-dot-container">
+              <span class="rec-dot"></span>
+              <span class="rec-text" id="recIndicatorText">RECORDING</span>
+            </div>
+            <div class="rec-timer" id="recordingTimer">00:00:00</div>
+          </div>
+        </div>
+
+        <!-- Recording Action Buttons -->
+        <div class="recording-controls">
+          <!-- Initial Start Button -->
+          <button id="startBtn" class="btn btn-success btn-lg">
+            <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/>
+            </svg>
+            Start Capture
+          </button>
+
+          <!-- Active State Controls (Hidden initially) -->
+          <div class="control-row hidden" id="activeControls">
+            <button id="pauseBtn" class="btn btn-warning">
+              <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/>
+              </svg>
+              Pause
+            </button>
+            <button id="resumeBtn" class="btn btn-success hidden">
+              <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/>
+              </svg>
+              Resume
+            </button>
+            <button id="stopBtn" class="btn btn-danger">
+              <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4 14H8V8h8v8z"/>
+              </svg>
+              Stop & Save
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Right Column: Recent Recordings Library -->
+      <section class="library-card glass-panel">
+        <div class="card-header">
+          <h2>Session Recordings</h2>
+          <p>Manage and download captured files</p>
+        </div>
+
+        <div class="recordings-list" id="recordingsList">
+          <!-- Empty State -->
+          <div class="list-empty-state" id="listEmptyState">
+            <div class="empty-icon" style="color: #0f172a;">
+              <svg viewBox="0 0 24 24" width="48" height="48" fill="currentColor">
+                <path d="M20 6h-8l-2-2H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm0 12H4V8h16v10z"/>
+              </svg>
+            </div>
+            <p>No recordings saved yet in this session</p>
+          </div>
+        </div>
+
+        <div class="library-footer hidden" id="libraryFooter">
+          <button class="btn btn-primary" id="downloadAllZipBtn">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" style="margin-right: 6px; transform: translateY(1px);">
+              <path d="M19 12v7H5v-7H3v7c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-7h-2zm-6 .67l2.59-2.58L17 11.5l-5 5-5-5 1.41-1.41L11 12.67V3h2v9.67z"/>
+            </svg>
+            Download All as ZIP
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <!-- Notification Toast -->
+    <div id="toast" class="toast hidden">
+      <span class="toast-message" id="toastMessage">Action completed successfully.</span>
+    </div>
+
+    <!-- Fullscreen Video Preview Modal -->
+    <div id="videoModal" class="modal-overlay hidden">
+      <button class="modal-close" id="modalCloseBtn">&times;</button>
+      
+      <div class="modal-content-wrapper">
+        <!-- Video Navigation Arrows -->
+        <button class="nav-arrow prev-arrow" id="prevVideoBtn" title="Previous recording">
+          <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
+            <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+          </svg>
+        </button>
+        <button class="nav-arrow next-arrow" id="nextVideoBtn" title="Next recording">
+          <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
+            <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+          </svg>
+        </button>
+
+        <div class="modal-video-container">
+          <video id="modalVideo" playsinline></video>
+          <!-- Center Play/Pause Overlay Indicator -->
+          <button class="modal-play-indicator" id="modalPlayIndicator">
+            <!-- Play Icon SVG -->
+            <svg class="play-svg" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M8 5v14l11-7z"/>
+            </svg>
+            <!-- Pause Icon SVG -->
+            <svg class="pause-svg hidden" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Custom Delete Confirmation Modal -->
+    <div id="deleteModal" class="modal-overlay hidden">
+      <div class="delete-modal-content">
+        <svg viewBox="0 0 24 24" width="48" height="48" fill="#ef4444" style="margin-bottom: 1rem;">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/>
+        </svg>
+        <h3>Delete Recording?</h3>
+        <p>Are you sure you want to delete this recording? This action cannot be undone.</p>
+        <div class="delete-modal-actions">
+          <button class="btn btn-secondary" id="cancelDeleteBtn">Cancel</button>
+          <button class="btn btn-danger" id="confirmDeleteBtn">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
