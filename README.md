@@ -92,8 +92,53 @@ graph TD
 
 ## 📸 Implementaion Screenshots
 
-## Step: 1 Select the quality of the video you want to record
+## Step: 1 Select the quality of the video you want to record.
+<img width="929" height="460" alt="Select the quality of the video you want to record" src="https://github.com/user-attachments/assets/5d62c488-60ba-467c-aa6e-46d78ea62251" />
 
+## Step: 2 Select whether you want to record audio.
+<img width="928" height="462" alt="Select whether you want to record audio" src="https://github.com/user-attachments/assets/9a158dfd-7559-47e8-ac25-850a51b1fd94" />
+
+## Step: 3 Click "Start Capture" to start recording.
+<img width="928" height="462" alt="Click _Start Capture_ to start recording" src="https://github.com/user-attachments/assets/3f651f5c-fb88-40e2-924f-91b4d1d37696" />
+
+## Step: 4 choose which table whould you like to record.
+<img width="884" height="471" alt="choose which table whould you like to record" src="https://github.com/user-attachments/assets/d009d02d-89d2-4126-a135-731f0d89915f" />
+
+## Step: 5 Allow microphone access.
+<img width="982" height="471" alt="Allow microphone access" src="https://github.com/user-attachments/assets/0125cd4e-b81c-4f68-a711-7ef069990e86" />
+
+## Step: 6 Click "Pause" to pause your screen recording.
+<img width="932" height="457" alt="Click _Pause_ to pause your screen recording" src="https://github.com/user-attachments/assets/5b14f6d7-852c-4f8c-9b93-6c7d66cce6a0" />
+
+## Step: 7 Click "Resume" to Resume your screen recording
+<img width="934" height="464" alt="Click _Resume_ to Resume your screen recording" src="https://github.com/user-attachments/assets/b48f90ed-b738-448d-801a-9d9d9942d72f" />
+
+## Step: 8 Click "Stop & Save" to Save your screen recording.
+<img width="934" height="464" alt="Click _Stop   Save_ to Save your screen recording" src="https://github.com/user-attachments/assets/38847102-782a-40c4-89de-470bdfff73d7" />
+
+## Step: 9 Double-click the video title to rename the recorded video.
+<img width="926" height="460" alt="Double-click the video title to rename the recorded video" src="https://github.com/user-attachments/assets/cb7f1155-9839-4916-8839-43a1428ae805" />
+
+## Step: 10 Click and drag the hamburger icon to rearrange the videos.
+<img width="929" height="457" alt="Click and drag the hamburger icon to rearrange the videos" src="https://github.com/user-attachments/assets/e96ba940-cfdc-4418-b9fd-92503e37c9dd" />
+
+## Step: 11 Click "Preview" to view your recorded video
+<img width="929" height="457" alt="Click _Preview_ to view your recorded video" src="https://github.com/user-attachments/assets/fa31ae6c-a8c2-4aa6-830a-2c03409527c1" />
+
+## Step: 12 Click the Left Navigation button to navigate left or Right.
+<img width="926" height="466" alt="Click the Left Navigation button to navigate" src="https://github.com/user-attachments/assets/5c727a75-f72f-48ab-8d2c-988e49f833e3" />
+
+## Step: 13 Click "Download" to Download your recorded video.
+<img width="929" height="457" alt="Click _Download_ to Download your recorded video" src="https://github.com/user-attachments/assets/580f2f28-e2bb-476f-bce7-3d1c962bddfe" />
+
+## Step: 14 Click "Delete" to Delete your recorded video.
+<img width="929" height="457" alt="Click _Delete_ to Delete your recorded video" src="https://github.com/user-attachments/assets/867ee187-ac50-4d52-bc83-90591ba5da3e" />
+
+## Step: 15 Click "Delete" to Conform Delete your recorded video.
+<img width="920" height="443" alt="Click _Delete_ to Conform Delete your recorded video" src="https://github.com/user-attachments/assets/38181173-f0e2-40e7-a053-629676cad823" />
+
+## Step: 16 Click "Download All as ZIP" to download all your recordings as a single ZIP file.
+<img width="929" height="457" alt="Click _Download All as ZIP_ to download all your recordings as a single ZIP file" src="https://github.com/user-attachments/assets/849026d4-93bd-4666-b2dd-faa277dab8df" />
 
 
 ---
