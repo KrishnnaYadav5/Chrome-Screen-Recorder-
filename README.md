@@ -1,7 +1,3 @@
-# Video link
-Click Here 👉 https://youtu.be/nPXXOz-qQys?si=f5qsVCiSbX3l6HH0
-
----
 
 # Hosted link
 Click Here 👉 https://chrome-screen-recorder-gamma.vercel.app/
